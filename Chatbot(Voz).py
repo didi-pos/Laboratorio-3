@@ -32,7 +32,7 @@ def generar_audio(texto, filename="respuesta.mp3"):
     return filename
 
 # --- Streamlit UI ---
-st.title("💬 Chatbot de Sistemas Digitales con Voz")
+st.title("💬 Chatbot de DeepSeek - Nikola Tesla")
 st.write("Haz una pregunta sobre sistemas digitales y escucha la respuesta.")
 
 # Guardar historial de conversación
