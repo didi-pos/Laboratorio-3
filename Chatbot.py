@@ -1,7 +1,9 @@
+import streamlit as st
 import requests
+import os
+from gtts import gTTS
 
-# Reemplaza 'TU_API_KEY' con tu clave API de DeepSeek
-API_KEY = 'sk-53751d5c6f344a5dbc0571de9f51313e'
+API_KEY = os.getenv("DEEPSEEK_API_KEY")
 API_URL = 'https://api.deepseek.com/v1/chat/completions'
 
 def enviar_mensaje(mensaje, modelo='deepseek-chat'):
