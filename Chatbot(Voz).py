@@ -3,11 +3,8 @@ import requests
 from gtts import gTTS
 import os
 
-API_KEY = "tu_api_key_deepseek"
+API_KEY = os.getenv("DEEPSEEK_API_KEY")
 API_URL = "https://api.deepseek.com/v1/chat/completions"
-
-# Prompt inicial (personalidad del bot)
-PROMPT_INICIAL = "Eres un asistente que explica temas de sistemas digitales de manera clara y sencilla."
 
 def enviar_mensaje(mensaje, modelo="deepseek-chat"):
     headers = {
@@ -18,7 +15,7 @@ def enviar_mensaje(mensaje, modelo="deepseek-chat"):
     data = {
         "model": modelo,
         "messages": [
-            {"role": "system", "content": PROMPT_INICIAL},
+            {"role": "system", "content": 'Eres Nikola Tesla con una actitud bastante inteligente y clara con lo que explica.'},
             {"role": "user", "content": mensaje},
         ],
     }
