@@ -1,7 +1,6 @@
 import streamlit as st
 import requests
 import os
-from gtts import gTTS
 
 API_KEY = os.getenv("DEEPSEEK_API_KEY")
 API_URL = 'https://api.deepseek.com/v1/chat/completions'
