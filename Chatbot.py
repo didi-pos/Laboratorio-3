@@ -14,14 +14,14 @@ def enviar_mensaje(mensaje, modelo='deepseek-chat'):
     data = {
         'model': modelo,
         'messages': [
-        {'role': 'system', 'content': 'Eres Nikola Tesla con una actitud bastante inteligente y clara con lo que explica.'},
-        {'role': 'user', 'content': mensaje}
-    ]
+            {'role': 'system', 'content': 'Eres Nikola Tesla con una actitud bastante inteligente y clara con lo que explica.'},
+            {'role': 'user', 'content': mensaje}
+        ]
     }
 
     try:
         response = requests.post(API_URL, headers=headers, json=data)
-        response.raise_for_status()  # Lanza una excepción si hay un error HTTP
+        response.raise_for_status()
         return response.json()['choices'][0]['message']['content']
     except requests.exceptions.HTTPError as err:
         return f"Error de la API: {err}"
@@ -29,17 +29,22 @@ def enviar_mensaje(mensaje, modelo='deepseek-chat'):
         return f"Error inesperado: {e}"
 
 def main():
-    print("Bienvenido al chatbot de DeepSeek. Escribe 'salir' para terminar.")
+    st.title("💬 Chatbot de DeepSeek - Nikola Tesla")
+    st.write("Escribe un mensaje y recibe la respuesta del chatbot.")
 
-    while True:
-        mensaje_usuario = input("Tú: ")
+    if "historial" not in st.session_state:
+        st.session_state.historial = []
 
-        if mensaje_usuario.lower() == 'salir':
-            print("Chatbot: ¡Hasta luego!")
-            break
+    mensaje_usuario = st.text_input("Tú:", "")
 
+    if st.button("Enviar") and mensaje_usuario:
         respuesta = enviar_mensaje(mensaje_usuario)
-        print(f"Chatbot: {respuesta}")
+        st.session_state.historial.append(("Tú", mensaje_usuario))
+        st.session_state.historial.append(("Chatbot", respuesta))
+
+    for rol, texto in st.session_state.historial:
+        st.markdown(f"**{rol}:** {texto}")
 
 if __name__ == "__main__":
     main()
+
