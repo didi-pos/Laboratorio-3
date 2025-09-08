@@ -34,3 +34,26 @@ El despliegue del chatbot se realizó paso a paso:
 Al finalizar, se obtuvo un chatbot funcional capaz de responder de manera clara y sencilla sobre temas de sistemas digitales. 
 Además, la versión en audio mejora la accesibilidad y la interacción del usuario.
 </p>
+
+<section style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; max-width:900px; margin:24px auto;">
+  <h2 style="text-align:center; color:#0f1720;">Aplicaciones desplegadas</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:16px;">
+    <article style="background:#0b1220; border-radius:12px; padding:18px; color:#f1f5f9; box-shadow:0 6px 18px rgba(2,6,23,0.6);">
+      <h3 style="margin:0 0 8px 0; font-size:20px;">Chatbot en Streamlit.app</h3>
+      <p style="margin:0 0 12px 0; color:#cbd5e1; line-height:1.4;">
+        Interfaz web de preguntas y respuestas sobre sistemas digitales. Incluye historial y salida de audio.
+      </p>
+      <a href="https://laboratorio-3-igbcgsjcpkcjgbmzt6dznb.streamlit.app/" target="_blank" rel="noopener" style="display:inline-block; padding:8px 12px; border-radius:8px; background:linear-gradient(90deg,#2DB1C4,#0242A3); color:white; text-decoration:none; font-weight:600;">Abrir app →</a>
+    </article>
+    <article style="background:#0b1220; border-radius:12px; padding:18px; color:#f1f5f9; box-shadow:0 6px 18px rgba(2,6,23,0.6);">
+      <h3 style="margin:0 0 8px 0; font-size:20px;">Chatbot de voz en Streamlit.app</h3>
+      <p style="margin:0 0 12px 0; color:#cbd5e1; line-height:1.4;">
+        Versión con entrada por micrófono y conversión a texto para interactuar por voz con el chatbot.
+      </p>
+      <a href="https://laboratorio-3-jmhy2puho7dfqkvvrwkyhm.streamlit.app/" target="_blank" rel="noopener" style="display:inline-block; padding:8px 12px; border-radius:8px; background:linear-gradient(90deg,#8B5CF6,#06B6D4); color:white; text-decoration:none; font-weight:600;">Abrir app →</a>
+    </article>
+  </div
+  <p style="text-align:center; color:#94a3b8; margin-top:14px; font-size:13px;">
+    Abre en una nueva pestaña. Requiere micrófono para la versión de voz.
+  </p>
+</section>
